@@ -1,5 +1,7 @@
 %h2= @article.title
 %p= @article.content
 
-= link_to "New article", new_article_path
 = link_to "Home", root_path
+
+- if user_signed_in?
+  = link_to "New article", new_article_path

@@ -34,3 +34,6 @@
   b. create migration to link tables `bin/rails g migration add_user_id_to_articles user_id:integer:index` and check in migration folder
   c. rake migrate
   d. Change article controller, to add user
+11. Authenticate user for creating new article
+  a. Add authenticate_user to article controller
+  b. Remove new article if not signed in
