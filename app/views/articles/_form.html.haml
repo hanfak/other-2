@@ -1,0 +1,4 @@
+= simple_form_for @article do |f|
+  =f.input :title
+  =f.input :content, input_html: {rows: 25, style: 'width: 800px'}
+  =f.submit

@@ -16,3 +16,4 @@
   a. Create 'create'  and 'new' controller, private method for params for form in articles controller
   b. Add routes for these, in array
   c. Create views for new and a partial for the form
+    1. In form create form wiht fields for model
