@@ -29,3 +29,8 @@
   b. Follow instructions on terminal
   c. create model and migrate (follow instructions on repo)
   d. Add sign in, sign up, sign out to views
+10. Add association to user and articles
+  a. In models for both add association types
+  b. create migration to link tables `bin/rails g migration add_user_id_to_articles user_id:integer:index` and check in migration folder
+  c. rake migrate
+  d. Change article controller, to add user
