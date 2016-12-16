@@ -17,3 +17,7 @@
   b. Add routes for these, in array
   c. Create views for new and a partial for the form
     1. In form create form wiht fields for model
+  d. go to simple_form repo and follow instruction for bootstrap-sass `bin/rails generate simple_form:install --bootstrap`
+  e. Add Bootstrap to assets
+  f. Add show to controller and associated route
+  g. Create show view, and add html
