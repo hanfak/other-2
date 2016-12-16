@@ -5,6 +5,6 @@
   %p= truncate(article.content, length:200)
   %p
     Published at
-    = article.created_at.strftime('%b %d, %Y')
+    = article.created_at.strftime('%I:%M%p, %b %d, %Y')
 
 = link_to "New article", new_article_path

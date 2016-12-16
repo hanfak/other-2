@@ -12,7 +12,7 @@
   b. create view `index.html.haml` write something
   c. Create route and set to root in config/routes.rb to `root article#index`
   d. restart server, and view '/'
-7. Create new article
+7. Create new article and show article
   a. Create 'create'  and 'new' controller, private method for params for form in articles controller
   b. Add routes for these, in array
   c. Create views for new and a partial for the form
@@ -24,3 +24,8 @@
 8. Show all articles
   a. create loop to go through all articles in index view
   b. in index controller access all articles
+9. User authentication
+  a. setup devise, goto devise repo
+  b. Follow instructions on terminal
+  c. create model and migrate (follow instructions on repo)
+  d. Add sign in, sign up, sign out to views
