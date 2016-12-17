@@ -1,12 +1,14 @@
 .row
-  .col-md-8
+  .col-md-9
+    - if !@category_id.nil?
+      %h3= @articles.first.category_id
     - @articles.each do |article|
       %h2= link_to article.title, article
-      %p= truncate(article.content, length:200)
+      %p= truncate(article.content.html_safe, length:200)
       %p
         Published at
         = article.created_at.strftime('%I:%M%p, %b %d, %Y')
-  .col-md-4
+  .col-md-3
     %h2
       %li= link_to "Categories", categories_path, class: "list-group-item"
     = render '/categories/categories', categories: @categories
