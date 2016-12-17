@@ -48,3 +48,4 @@
     -   `= f.collection_check_boxes :category_id, Category.all, :id, :name, { prompt: "Choose a Category" }`
       - For check boxes when more than one category for a wiki
   f. Article contrl add permit for categories
+  g. layout, add list of category
