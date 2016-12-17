@@ -1,14 +1,12 @@
-
-
-- @articles.each do |article|
-  %h2= link_to article.title, article
-  %p= truncate(article.content, length:200)
-  %p
-    Published at
-    = article.created_at.strftime('%I:%M%p, %b %d, %Y')
-
-- if user_signed_in?
-  = link_to "New article", new_article_path
-
-%li= link_to "Categories", categories_path, class: "list-group-item"
-= render '/categories/categories', categories: @categories
+.row
+  .col-md-8
+    - @articles.each do |article|
+      %h2= link_to article.title, article
+      %p= truncate(article.content, length:200)
+      %p
+        Published at
+        = article.created_at.strftime('%I:%M%p, %b %d, %Y')
+  .col-md-4
+    %h2
+      %li= link_to "Categories", categories_path, class: "list-group-item"
+    = render '/categories/categories', categories: @categories
