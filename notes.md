@@ -37,3 +37,8 @@
 11. Authenticate user for creating new article
   a. Add authenticate_user to article controller
   b. Remove new article if not signed in
+12. Add Categories
+  a. 'bin/rails g model Category name:string' and migrate
+  b. 'bin/rails g migration add_category_id_to_articles category_id:integer' and migrate
+  c. Add Assocaition to arcitle
+    1. Do in each model
