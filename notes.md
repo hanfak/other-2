@@ -51,4 +51,12 @@
   g. layout, add list of category, view categories
     1. view commit 'list categories on index'
     2. Change controllers, to access query params and show post by categories
-  
+13. Edit article
+  a. create edit and update in controller
+    1. create private method to extract finding article
+    2. Add before action to access private method in controllers
+  b. add to routes
+  c. create views for edit
+*. Validates the article fields as required
+14. Delete article
+  a. 

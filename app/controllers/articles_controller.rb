@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :find_article, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -25,13 +26,30 @@ class ArticlesController < ApplicationController
 		if @article.save
 			redirect_to @article
 		else
+      flash[:notice] = 'Error in form'
 			render 'new'
 		end
 	end
+
+  def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      flash[:notice] = 'Error in form'
+      render 'edit'
+    end
+  end
 
 	private
 
 	def article_params
 		params.require(:article).permit(:title, :content, :category_id)
 	end
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 end
