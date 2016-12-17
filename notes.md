@@ -59,4 +59,4 @@
   c. create views for edit
 *. Validates the article fields as required
 14. Delete article
-  a. 
+  a. Same as edit, no views, but add link for delete
