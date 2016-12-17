@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   def index
     @categories = Category.all
     if params[:category].blank?
@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @category = Category.find_by(id: @article.category_id)
   end
 
 	def new

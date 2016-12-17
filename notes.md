@@ -51,3 +51,4 @@
   g. layout, add list of category, view categories
     1. view commit 'list categories on index'
     2. Change controllers, to access query params and show post by categories
+  
