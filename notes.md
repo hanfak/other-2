@@ -60,3 +60,5 @@
 *. Validates the article fields as required
 14. Delete article
   a. Same as edit, no views, but add link for delete
+  b. hide delete if not author of article in view
+  c. prevent user from deleting in cnotrll
