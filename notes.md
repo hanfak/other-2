@@ -42,3 +42,9 @@
   b. 'bin/rails g migration add_category_id_to_articles category_id:integer' and migrate
   c. Add Assocaition to arcitle
     1. Do in each model
+  d. Create category records in terminal
+  e. Change form
+    - `= f.collection_select :category_id, Category.all, :id, :name, { promt: "Choose a Category" }`
+    -   `= f.collection_check_boxes :category_id, Category.all, :id, :name, { prompt: "Choose a Category" }`
+      - For check boxes when more than one category for a wiki
+  f. Article contrl add permit for categories
