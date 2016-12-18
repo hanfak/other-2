@@ -1,7 +1,7 @@
 .row
   .col-md-9
-    - if !@category_id.nil?
-      %h3= @articles.first.category_id
+    - if !@category.id.nil?
+      %h3= @category.name +  " Wiki's"
     - @articles.each do |article|
       %h2= link_to article.title, article
       %p= truncate(article.content.html_safe, length:200)
