@@ -23,24 +23,18 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = current_user.articles.build(article_params)
-		if @article.save
-			redirect_to @article
-		else
-      flash[:notice] = 'Error in form'
-			render 'new'
-		end
+		return redirect_to @article if @article.save
+    flash[:notice] = 'Error in form'
+		render 'new'
 	end
 
   def edit
   end
 
   def update
-    if @article.update(article_params)
-      redirect_to @article
-    else
-      flash[:notice] = 'Error in form'
-      render 'edit'
-    end
+    return redirect_to @article if @article.update(article_params)
+    flash[:notice] = 'Error in form'
+    render 'edit'
   end
 
   def destroy
