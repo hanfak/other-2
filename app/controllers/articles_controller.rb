@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show, :edit, :update, :destroy]
+  # before_action :find_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = find_article
     @category = Category.find_by(id: @article.category_id)
   end
 
@@ -29,15 +29,18 @@ class ArticlesController < ApplicationController
 	end
 
   def edit
+    @article = find_article
   end
 
   def update
+    @article = find_article
     return redirect_to @article if @article.update(article_params)
     flash[:notice] = 'Error in form'
     render 'edit'
   end
 
   def destroy
+    @article = find_article
     return redirect_to @article unless current_user.id == @article.user_id
     @article.destroy
     redirect_to root_path
@@ -50,6 +53,6 @@ class ArticlesController < ApplicationController
 	end
 
   def find_article
-    @article = Article.find(params[:id])
+    Article.find(params[:id])
   end
 end
