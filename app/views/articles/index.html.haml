@@ -4,7 +4,7 @@
       %h3= @category.name +  " Wiki's"
     - @articles.each do |article|
       %h2= link_to article.title, article
-      %p= truncate(article.content.html_safe, length:200)
+      %p= truncate(markdown(article.content), length:200)
       %p
         Published at
         = article.created_at.strftime('%I:%M%p, %b %d, %Y')

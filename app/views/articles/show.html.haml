@@ -1,5 +1,5 @@
 %h2= @article.title
-%p= @article.content.html_safe
+%p= markdown(@article.content)
 %p= link_to("#{@category.name}", "/articles?category=#{@category.name}")
 
 - if user_signed_in?
