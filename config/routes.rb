@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles
+  resources :articles, param: :title
   resources :categories, only: [:index, :new, :create]
   root 'articles#index'
   # The priority is based upon order of creation: first created -> highest priority.

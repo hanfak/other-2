@@ -52,6 +52,6 @@ class ArticlesController < ApplicationController
 	end
 
   def find_article
-    Article.find(params[:id])
+    Article.find_by(title: params[:title])
   end
 end
